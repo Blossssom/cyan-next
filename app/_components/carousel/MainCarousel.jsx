@@ -1,17 +1,37 @@
-'use client'
+"use client";
 
-import React from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
+import React, { useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import Image from "next/image";
 
 export default function MainCarousel() {
-    const [emblaRef]  = useEmblaCarousel({ loop: true })
+  const [emblaRef] = useEmblaCarousel({ loop: true });
+  const imageList = [
+    "/images/image7.png",
+    "/images/image6.png",
+    "/images/image2.png",
+  ];
+
   return (
-    <article className='embla__viewport overflow-hidden w-full' ref={emblaRef}>
-        <div className='embla__container flex'>
-            <div className={`embla__slide mx-10 flex-none w-[80%] min-w-0 h-[700px] bg-slate-900`}>
-                 slide1
-            </div>       
-        </div>
+    <article className="embla__viewport overflow-hidden w-full" ref={emblaRef}>
+      <div className="embla__container flex">
+        {imageList.map((image, index) => {
+          return (
+            <div
+              key={index}
+              className={`embla__slide overflow-hidden rounded-xl mx-5 relative flex-none w-[80%] min-w-0 h-[700px] bg-slate-900`}
+            >
+              <Image
+                layout="fill"
+                objectFit="cover"
+                priority
+                src={image}
+                alt="image"
+              />
+            </div>
+          );
+        })}
+      </div>
     </article>
-  )
+  );
 }

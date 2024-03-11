@@ -18,11 +18,50 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: #F4F1ED;
+  background-color: #f4f1ed;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+@keyframes logo {
+  from {
+    stroke-dashoffset: -2000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#main-typo path {
+  fill: none;
+  stroke: black;
+  stroke-width: 3px;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  opacity: 1;
+  animation: 5s text-outline alternate forwards;
+}
+@keyframes text-outline {
+  0% {
+    stroke-dashoffset: 400;
+    opacity: 0.3;
+    fill: none; /* 초기 상태에서는 색상을 채우지 않음 */
+  }
+  80% {
+    /* 80% (4초) 동안 스트로크를 그림, 이 시점에서 스트로크 그리기 완료 */
+    stroke-dashoffset: 0;
+    opacity: 0.6;
+    fill: none; /* 스트로크가 완성될 때까지 색상은 채우지 않음 */
+  }
+  100% {
+    /* 마지막 20% (1초) 동안 색상을 채움 */
+    stroke-dashoffset: 0;
+    opacity: 1;
+    fill: black; /* 최종적으로 색상을 채움 */
   }
 }
