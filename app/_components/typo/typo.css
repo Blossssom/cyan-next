@@ -1,0 +1,118 @@
+.text .item {
+  height: 100%;
+  font-family: Tenada, sans-serif;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  transform: translateY(-50px);
+  opacity: 0;
+  animation-name: titleAnimation;
+  animation-timing-function: ease;
+  animation-duration: 3s;
+  animation-delay: 1.2s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.text .item > p {
+  word-break: break-all;
+  line-height: 1.2;
+}
+
+.text .item:first-child {
+  animation-delay: 0.7s;
+}
+
+.text .item:last-child {
+  animation-delay: 0.5s;
+}
+
+/* .middle-wrapper {
+  animation: show 5s linear infinite;
+} */
+
+.middle-wrapper .item p:first-child {
+  animation-delay: 3s;
+  animation-timing-function: ease-in;
+  animation-duration: 10s;
+  animation-name: show;
+  animation-iteration-count: infinite;
+}
+
+@font-face {
+  font-family: "Tenada";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/font/Tenada.ttf") format("truetype");
+}
+
+@keyframes show {
+  0% {
+    margin-top: -216px;
+  }
+  5% {
+    margin-top: -144px;
+  }
+  33% {
+    margin-top: -144px;
+  }
+  38% {
+    margin-top: -72px;
+  }
+  66% {
+    margin-top: -72px;
+  }
+  71% {
+    margin-top: 0px;
+  }
+  99.99% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -216px;
+  }
+  /* 0% {
+    transform: translateY(-216px);
+  }
+  5% {
+    transform: translateY(-144px);
+  }
+  33% {
+    transform: translateY(-144px);
+  }
+  38% {
+    transform: translateY(-72px);
+  }
+  66% {
+    transform: translateY(-72px);
+  }
+  71% {
+    transform: translateY(0px);
+  }
+  99.99% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-216px);
+  } */
+}
+
+@keyframes titleAnimation {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0%);
+  }
+  20% {
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    /* -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0%); */
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0%);
+    /* clip-path: none; */
+  }
+}
