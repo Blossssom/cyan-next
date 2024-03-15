@@ -7,7 +7,7 @@ export default function ImageSlider() {
   useEffect(() => {
     getGalleryData();
   }, []);
-  const [emblaRef] = useEmblaCarousel({ loop: true });
+  const [emblaRef] = useEmblaCarousel({ dragFree: true });
   const [imageList, setImageList] = useState([]);
 
   const getGalleryData = async () => {
@@ -15,25 +15,32 @@ export default function ImageSlider() {
     setImageList(await result.json());
   };
   return (
-    <div className="embla__viewport overflow-hidden w-full" ref={emblaRef}>
-      <div className="embla__container flex gap-4">
-        {imageList.slice(0, 8).map((image) => {
-          return (
-            <div
-              key={image.commonFileSeq}
-              className={`embla__slide overflow-hidden min-w-0 w-[297px] h-[297px] rounded-md relative`}
-            >
-              <Image
-                priority
-                src={`https://photocyan.com:8000${image.fileWeb}`}
-                alt="image"
-                fill
-                objectFit="cover"
-                // style={{ width: "100%", height: "auto" }}
-              />
-            </div>
-          );
-        })}
+    <div className="flex flex-col items-center gap-14 w-full">
+      <div className="embla__viewport overflow-hidden w-full" ref={emblaRef}>
+        <div className="embla__container flex gap-4">
+          {imageList.map((image) => {
+            return (
+              <div
+                key={image.commonFileSeq}
+                className={`embla__slide overflow-hidden flex-none w-[297px] min-w-0 h-[297px] rounded-md relative`}
+              >
+                <Image
+                  priority
+                  src={`https://photocyan.com:8000${image.fileWeb}`}
+                  alt="image"
+                  object-fit="cover"
+                  width={297}
+                  height={297}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="px-6 py-3 border border-black rounded-[60px]">
+        <a href="#" className="font-bold">
+          인스타그램에서 더 많은 사진 보기
+        </a>
       </div>
     </div>
   );
