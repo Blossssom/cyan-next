@@ -19,8 +19,23 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <ImageSlider />
-      <StudioGrid />
+      <section className="flex flex-col gap-14 items-center mb-52 w-full">
+        <ImageSlider />
+        <div className="px-6 py-3 border border-black rounded-[60px]">
+          <a href="#" className="font-bold">
+            인스타그램에서 더 많은 사진 보기
+          </a>
+        </div>
+      </section>
+      <section className="flex flex-col gap-4 items-center">
+        <div className="w-full text-left">
+          <h2 className="text-[42px] font-bold">시안 스튜디오</h2>
+        </div>
+        <StudioGrid />
+        <button className="w-fit px-10 py-3 border border-black rounded-[60px] font-bold mt-11">
+          지점 더 보기
+        </button>
+      </section>
     </main>
   );
 }

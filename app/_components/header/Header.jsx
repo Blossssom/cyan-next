@@ -5,7 +5,7 @@ import logoImage from "@/public/images/icon/cyan-logo.svg";
 
 export default function Header() {
   return (
-    <header className="flex h-24 mb-3 items-center justify-between w-full px-60">
+    <header className="flex font-bold h-24 mb-3 items-center justify-between w-full px-60">
       <Image src={logoImage} width="136" height="auto" alt="logo" priority />
       <div className="flex items-center gap-14">
         <Link href="#">시안 스토리</Link>
