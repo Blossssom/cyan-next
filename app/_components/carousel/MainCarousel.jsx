@@ -13,7 +13,10 @@ export default function MainCarousel() {
   ];
 
   return (
-    <article className="embla__viewport overflow-hidden w-full" ref={emblaRef}>
+    <article
+      className="embla__viewport overflow-hidden w-full h-full"
+      ref={emblaRef}
+    >
       <div className="embla__container flex">
         {imageList.map((image, index) => {
           return (

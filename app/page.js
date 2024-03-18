@@ -1,4 +1,3 @@
-import Header from "./_components/header/Header";
 import MainCarousel from "./_components/carousel/MainCarousel";
 import MainText from "./_components/typo/MainText";
 import ImageSlider from "./_components/carousel/ImageSlider";
@@ -6,8 +5,7 @@ import StudioGrid from "./_components/studio/StudioGrid";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center overflow-hidden">
-      <Header />
+    <main className="flex min-h-screen flex-col items-center">
       <MainCarousel />
       <div className="py-24 flex justify-center items-center flex-col gap-14 text-2xl font-medium tracking-tight">
         <MainText />
