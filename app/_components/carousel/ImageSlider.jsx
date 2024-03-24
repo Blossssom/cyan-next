@@ -2,12 +2,16 @@
 import React, { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay";
 import { getGalleryApi } from "../../_api/index";
+
 export default function ImageSlider() {
   useEffect(() => {
     getGalleryData();
   }, []);
-  const [emblaRef] = useEmblaCarousel({ dragFree: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ dragFree: false }, [
+    Autoplay({ playOnInit: true, delay: 2000, stopOnInteraction: false }),
+  ]);
   const [imageList, setImageList] = useState([]);
 
   const getGalleryData = async () => {

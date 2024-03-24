@@ -25,9 +25,10 @@ export default function useCalendar() {
             day: `${days.format("DD")}일`,
             reservation: "",
             css: {
-              color: "",
-              bgColor: "",
+              color: "#fff",
+              bgColor: "#4B9DFD",
               display: "",
+              border: "#448EE4",
             },
             handler: {
               onClick: () => {},
@@ -41,9 +42,10 @@ export default function useCalendar() {
             day: `${days.format("DD")}일`,
             reservation: "",
             css: {
-              color: "",
-              bgColor: "",
+              color: "#ACADAE",
+              bgColor: "#F5F7F8",
               display: "",
+              border: "#DDDFE0",
             },
             handler: {
               onClick: () => {},
@@ -58,8 +60,9 @@ export default function useCalendar() {
             reservation: "",
             css: {
               color: "",
-              bgColor: "",
+              bgColor: "#DFECFB",
               display: "",
+              border: "#C9D5E2",
             },
             handler: {
               onClick: () => {},

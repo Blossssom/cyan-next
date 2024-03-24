@@ -16,6 +16,10 @@
   }
 }
 
+* {
+  user-select: none;
+}
+
 body {
   color: black;
   background-color: #fdfdfd;
