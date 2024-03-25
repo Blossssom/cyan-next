@@ -1,4 +1,3 @@
 {
-  "/(route)/reservation/page": "app/(route)/reservation/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/(route)/reservation/page": "app/(route)/reservation/page.js"
 }

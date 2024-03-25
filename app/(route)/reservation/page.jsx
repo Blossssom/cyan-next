@@ -1,5 +1,5 @@
 import React from "react";
-import ReservationIntro from "@/app/_components/reservation/reservationIntro";
+import ReservationIntro from "@/app/_components/reservation/ReservationIntro";
 
 export default function page() {
   return (

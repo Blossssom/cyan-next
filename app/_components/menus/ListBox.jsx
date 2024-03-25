@@ -19,7 +19,7 @@ export default function ListBox(props) {
         {options && options[selectedIndex]}
       </div>
       {isOpen && (
-        <ul className="listBox__options">
+        <ul className="h-60 overflow-auto">
           {options &&
             options.map((option, index) => (
               <li

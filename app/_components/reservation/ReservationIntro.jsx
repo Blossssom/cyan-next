@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import ReserveCalendar from "@/app/_components/calendar/ReserveCalendar";
 import Listbox from "@/app/_components/menus/ListBox";
 
-export default function reservationIntro() {
+export default function ReservationIntro() {
   const [list, setList] = useState([
     "서울",
     "부산",
@@ -25,15 +25,18 @@ export default function reservationIntro() {
   ]);
   return (
     <section className="w-full flex flex-col gap-14 max-w-[1440px]">
-      <div className="text-[60px] font-bold leading-tight">
+      <div className="w-full text-[60px] font-bold leading-tight">
         <p>시안 사진관에</p>
         <p>예약해주셔서 감사합니다</p>
       </div>
-      <article className="flex w-full overflow-hidden">
-        <div className="w-full border-t-[1px] border-[#959595] py-3">
-          <div className="w-full flex justify-between align-top">
+      <article className="w-full flex gap-[50px]">
+        <div className="w-[50%] border-t-[1px] border-[#959595] py-3 overflow-hidden">
+          <div className="flex justify-between align-top">
             <p className="text-2xl font-bold">예약 지점</p>
             <Listbox options={list} />
+          </div>
+          <div>
+            <p className="flex justify-between align-top">예약 인원</p>
           </div>
         </div>
         <div className="flex border-t-[1px] border-[#959595] py-3 gap-14">

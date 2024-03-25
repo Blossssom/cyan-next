@@ -3,10 +3,11 @@
 import React from "react";
 import useCalendar from "./useCalendar";
 
+const weekTextArray = ["일", "월", "화", "수", "목", "금", "토"];
+
 export default function ReserveCalendar() {
   const [days, daysList] = useCalendar();
 
-  const weekTextArray = ["일", "월", "화", "수", "목", "금", "토"];
   return (
     <div className="grid grid-cols-7 gap-[10px] w-[536px]">
       {weekTextArray.map((weekText) => {
