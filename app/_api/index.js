@@ -25,3 +25,20 @@ export const getStudioListApi = async () => {
     console.log(err);
   }
 };
+
+export const getListReservationApi = async () => {
+  try {
+    const result = fetch(
+      "https://photocyan.com:8000/api/common/listReservation",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ studioSeq: 4, rsrvtDay: "20240326" }),
+      },
+    );
+
+    return result;
+  } catch (err) {
+    console.log(err);
+  }
+};

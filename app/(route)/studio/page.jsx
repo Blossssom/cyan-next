@@ -3,7 +3,7 @@ import React from "react";
 
 export default function page() {
   return (
-    <main className="w-full h-full flex flex-col gap-[140px] items-center">
+    <div className="w-full h-full flex flex-col gap-[140px] items-center">
       <section className="w-full max-w-[1440px] flex items-end justify-between">
         <div className="text-[64px] flex flex-col font-bold tracking-[-0.5rem]">
           <span>여러분이 있는 모든 곳에서</span>
@@ -22,6 +22,6 @@ export default function page() {
       <section className="mb-[180px]">
         <StudioGrid />
       </section>
-    </main>
+    </div>
   );
 }

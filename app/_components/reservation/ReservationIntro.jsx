@@ -2,8 +2,24 @@
 import React, { useState } from "react";
 import ReserveCalendar from "@/app/_components/calendar/ReserveCalendar";
 import Listbox from "@/app/_components/menus/ListBox";
+import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
 
-export default function ReservationIntro() {
+export default function ReservationIntro(props) {
+  const [customer, setCustomer] = useState(1);
+
+  const addCustomerHandler = () => {
+    if (customer >= 4) {
+      return;
+    }
+    setCustomer(customer + 1);
+  };
+
+  const removeCustomerHandler = () => {
+    if (customer <= 1) {
+      return;
+    }
+    setCustomer(customer - 1);
+  };
   const [list, setList] = useState([
     "서울",
     "부산",
@@ -24,22 +40,33 @@ export default function ReservationIntro() {
     "제주",
   ]);
   return (
-    <section className="w-full flex flex-col gap-14 max-w-[1440px]">
+    <section className="fade-in w-full flex flex-col gap-14 max-w-[1440px]">
       <div className="w-full text-[60px] font-bold leading-tight">
         <p>시안 사진관에</p>
         <p>예약해주셔서 감사합니다</p>
       </div>
-      <article className="w-full flex gap-[50px]">
-        <div className="w-[50%] border-t-[1px] border-[#959595] py-3 overflow-hidden">
+      <article className="w-full flex gap-[40px]">
+        <div className="flex flex-col gap-12 w-[50%] border-t-[1px] border-[#959595] py-3 overflow-hidden">
           <div className="flex justify-between align-top">
             <p className="text-2xl font-bold">예약 지점</p>
             <Listbox options={list} />
           </div>
-          <div>
-            <p className="flex justify-between align-top">예약 인원</p>
+          <div className="flex justify-between align-top border-t-[1px] py-3 border-[#959595]">
+            <p className="text-2xl font-bold">예약 인원</p>
+            <div className="flex items-center gap-6">
+              <button onClick={() => removeCustomerHandler()}>
+                <CiCircleMinus size={40} />
+              </button>
+              <p className="text-center font-bold text-[32px] min-w-6">
+                {customer}
+              </p>
+              <button onClick={() => addCustomerHandler()}>
+                <CiCirclePlus size={40} />
+              </button>
+            </div>
           </div>
         </div>
-        <div className="flex border-t-[1px] border-[#959595] py-3 gap-14">
+        <div className="w-[50%] flex border-t-[1px] border-[#959595] py-3 gap-14">
           <div className="flex flex-col gap-4">
             <p className="text-2xl font-bold">예약날짜</p>
             <div>
@@ -60,6 +87,14 @@ export default function ReservationIntro() {
           <ReserveCalendar />
         </div>
       </article>
+      <div className="w-full flex justify-end items-center my-20">
+        <button
+          onClick={() => props.nextStep()}
+          className="rounded-full border-black border py-5 px-10 font-bold"
+        >
+          다음
+        </button>
+      </div>
     </section>
   );
 }
