@@ -27,12 +27,15 @@ export default function ReservationTime(props) {
             />
           </div>
           <div className="flex gap-6 py-3 border-t-[1px] border-[#959595]">
-            <input
-              id="check-show"
-              className="w-6 h-6 flex-none bg-[#F5F7F8]"
-              type="radio"
-            />
-            <label for="check-show" className="">
+            <label
+              htmlFor="check-show"
+              className="flex gap-6 text-lg font-medium"
+            >
+              <input
+                id="check-show"
+                className="w-6 h-6 flex-none bg-slate-500"
+                type="radio"
+              />
               <p>
                 (필수) 서비스 이용 약관에 따라 상습적으로 예약 후 미
                 방문(노쇼)이 3회 이상 지속될 경우 해당 예약자 정보로 시안

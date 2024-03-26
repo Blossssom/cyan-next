@@ -42,3 +42,20 @@ export const getListReservationApi = async () => {
     console.log(err);
   }
 };
+
+export const getProductItemApi = async () => {
+  try {
+    const result = fetch(
+      "https://photocyan.com:8000/api/common/listPhotoItem",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({}),
+      },
+    );
+
+    return result;
+  } catch (err) {
+    console.log(err);
+  }
+};

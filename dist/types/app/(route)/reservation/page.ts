@@ -1,4 +1,4 @@
-// File: /home/bloxxom/Develop/next-project/cyan-next/app/(route)/reservation/page.jsx
+// File: C:\Users\bloxxom\develop\cyan\new-cyan\app\(route)\reservation\page.jsx
 import * as entry from '../../../../../app/(route)/reservation/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
