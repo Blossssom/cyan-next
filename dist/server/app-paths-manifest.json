@@ -1,6 +1,0 @@
-{
-  "/page": "app/page.js",
-  "/(route)/reservation/page": "app/(route)/reservation/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/(route)/studio/page": "app/(route)/studio/page.js"
-}
