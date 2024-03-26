@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import ReservationIntro from "@/app/_components/reservation/ReservationIntro";
 import ReservationTime from "@/app/_components/reservation/ReservationTime";
-import { CSSTransition } from "react-transition-group";
 import "./transitions.css";
 
 export default function page() {
