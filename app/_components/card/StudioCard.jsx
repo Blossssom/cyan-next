@@ -1,9 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import { colorList } from "../../_constance/studio";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function StudioCard(props) {
-  console.log("StudioCard Rendered", props.seq);
+  const router = useRouter();
   const idColor = colorList[props.seq];
   const cardClickHandler = () => {
     console.log("StudioCard Clicked :", props.isSelected, props.seq);
@@ -14,14 +16,6 @@ export default function StudioCard(props) {
       className="w-full h-[400px] rounded-xl relative overflow-hidden shadow"
       onClick={() => cardClickHandler()}
     >
-      {/* <Image
-        property
-        src={`${props.image}`}
-        alt="studio-image"
-        object-fit="cover"
-        width={345}
-        height={400}
-      /> */}
       <img
         className="w-full h-full object-cover"
         src={`https://photocyan.com:8000${props.image}`}
@@ -52,9 +46,19 @@ export default function StudioCard(props) {
           </div>
 
           <div className="flex justify-end gap-3 mt-7">
-            <button className="border border-white rounded-[60px] px-8 py-3">
+            <Link
+              href={{
+                pathname: `/studio/${props.seq}`,
+                query: {
+                  seq: props.seq,
+                  image: props.image.toString(),
+                  color: colorList[props.seq],
+                },
+              }}
+              className="border border-white rounded-[60px] px-8 py-3"
+            >
               더 보기
-            </button>
+            </Link>
             <button className="border border-white rounded-[60px] px-8 py-3">
               예약하기
             </button>
