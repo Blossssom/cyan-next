@@ -22,11 +22,11 @@ export default function MainCarousel() {
           return (
             <div
               key={index}
-              className={`embla__slide overflow-hidden rounded-xl mx-5 relative flex-none w-[80%] min-w-0 h-[700px] bg-slate-900`}
+              className={`embla__slide overflow-hidden rounded-xl mx-5 relative flex-none w-[80%] min-w-0 h-[600px] bg-slate-900`}
             >
               <Image
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
                 priority
                 src={image}
                 alt="image"

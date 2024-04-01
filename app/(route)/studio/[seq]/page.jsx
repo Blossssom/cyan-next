@@ -18,7 +18,7 @@ export default function page() {
   //     setStudioImage(await result.json());
   //   };
   return (
-    <div className="w-full h-full min-h-[840px] relative bg-black">
+    <div className="w-full h-full min-h-[840px] relative bg-black flex justify-end">
       <Image
         fill
         src={`https://photocyan.com:8000${params.get("image")}`}
@@ -26,9 +26,9 @@ export default function page() {
         style={{ objectFit: "cover", opacity: 0.7 }}
       />
 
-      <div className="p-6 z-2 w-full h-full absolute flex justify-end">
+      <div className="z-2 w-[50%] h-full absolute flex justify-end">
         <div
-          className={`opacity-60 font-bold text-8xl text-[${params.get("color")}]`}
+          className={`w-[70%] font-bold text-8xl text-white text-[${params.get("color")}] bg-black mix-blend-`}
         >
           <p>WELCOME</p>
           <p>THIS IS</p>
