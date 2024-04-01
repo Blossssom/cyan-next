@@ -26,15 +26,11 @@ export default function page() {
         style={{ objectFit: "cover", opacity: 0.7 }}
       />
 
-      <div className="z-2 w-[50%] h-full absolute flex justify-end">
-        <div
-          className={`w-[70%] font-bold text-8xl text-white text-[${params.get("color")}] bg-black mix-blend-`}
-        >
-          <p>WELCOME</p>
-          <p>THIS IS</p>
-          <p>SYAN</p>
-          <p>STUDIO</p>
-        </div>
+      <div className="absolute text-black z-2 w-full h-full">
+        <p>WELCOME</p>
+        <p>THIS IS</p>
+        <p>SYAN</p>
+        <p>STUDIO</p>
       </div>
     </div>
   );

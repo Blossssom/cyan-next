@@ -10,7 +10,7 @@ export default function Header() {
         <Image src={logoImage} width="136" height="auto" alt="logo" priority />
       </Link>
       <div className="flex items-center gap-14">
-        <Link href="/studio">시안 스토리</Link>
+        <Link href="/story">시안 스토리</Link>
         <Link href="/studio">지점 소개</Link>
         <Link href="/reservation">예약하기</Link>
         <Link href="/studio">비즈니스 문의</Link>
